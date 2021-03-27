@@ -3,3 +3,5 @@ npm ci
 npm i -S typeorm sqlite3
 create database entities
 setup db connection
+create user router && add to router.ts
+test with curl (curl -XPOST -H'content-type: application/json' -d'{"name": "Tibi", "email": "tibi@example.com", "password": "alma"}' localhost:5000/register)
