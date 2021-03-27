@@ -5,7 +5,7 @@ import * as jwt from "jsonwebtoken";
 
 export async function register(req: Request, res: Response) {
     if (!req.body.name) {
-        //return res.status(400).json("Name is mandatory.");
+        return res.status(400).json("Name is mandatory.");
     }
 
     if (!req.body.email) {
@@ -17,7 +17,7 @@ export async function register(req: Request, res: Response) {
     }
 
     let exists = await User.findOne({ where: { email: req.body.email } });
-    if (!exists) {
+    if (exists) {
         return res.status(400).json("Email is already registered.");
     }
 
