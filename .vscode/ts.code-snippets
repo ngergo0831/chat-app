@@ -1,0 +1,158 @@
+{
+    "model": {
+        "scope": "typescript",
+        "prefix": "model",
+        "body": [
+            "import { Column, Entity } from 'typeorm';",
+            "import { BaseEntityWithId } from './BaseEntityWithId';",
+            "",
+            "@Entity()",
+            "export class ${1:Model} extends BaseEntityWithId",
+            "{",
+            "    @Column()",
+            "    ${2:property: ${3:string};}$0",
+            "}",
+            ""
+        ],
+        "description": "Create a new model"
+    },
+    "controller": {
+        "scope": "typescript",
+        "prefix": [
+            "con", "controller"
+        ],
+        "body": [
+            "import { Request, Response, NextFunction } from 'express';",
+            "import { ValidationChain, body } from 'express-validator';",
+            "",
+            "export async function ${1:action}(req: Request, res: Response, next: NextFunction)",
+            "{",
+            "\t${0:res.status(501).send('Not implemented...');}",
+            "}"
+        ],
+        "description": "Create a new controller"
+    },
+    "action": {
+        "scope": "typescript",
+        "prefix": [
+            "act", "action"
+        ],
+        "body": [
+            "export async function ${1:action}(req: Request, res: Response, next: NextFunction)",
+            "{",
+            "\t${0:res.status(501).send('Not implemented...');}",
+            "}",
+            ""
+        ],
+        "description": "Create a new controller"
+    },
+    "validated action": {
+        "scope": "typescript",
+        "prefix": [
+            "vact", "validated action"
+        ],
+        "body": [
+            "export const ${1:action}Validators: ValidationChain[] = [",
+            "\t${2:body('${3:field}').exists()}",
+            "];",
+            "",
+            "export async function ${1:action}(req: Request, res: Response, next: NextFunction)",
+            "{",
+            "\t${0:res.status(501).send('Not implemented...');}",
+            "}",
+            ""
+        ],
+        "description": "Create a new controller"
+    },
+    "fixture": {
+        "scope": "typescript",
+        "prefix": [
+            "fix", "fixture", "describe"
+        ],
+        "body": [
+            "import { basename } from 'path';",
+            "process.env.TEST_NAME = basename(module.filename).replace('.spec.ts', '');",
+            "// modify code below",
+            "",
+            "import { describe } from 'mocha';",
+            "import { assert } from 'chai';",
+            "",
+            "describe('${1:description}', () => {",
+            "${2:    it('${3:should do something}', async () => {",
+            "        $0",
+            "    \\});}",
+            "});",
+            ""
+        ]
+    },
+    "supertest fixture": {
+        "scope": "typescript",
+        "prefix": [
+            "superfix"
+        ],
+        "body": [
+            "import { basename } from 'path';",
+            "process.env.TEST_NAME = basename(module.filename).replace('.spec.ts', '');",
+            "// modify code below",
+            "",
+            "import { describe } from 'mocha';",
+            "import { assert } from 'chai';",
+            "import { connPromise, app } from '../app';",
+            "import * as supertest from 'supertest';",
+            "",
+            "describe('${1:description}', () => {",
+            "    before(async () => {",
+            "        await connPromise;",
+            "    });",
+            "",
+            "${2:    it('${3:should do something}', async () => {",
+            "        $0",
+            "    \\});}",
+            "});",
+            ""
+        ]
+    },
+    "it": {
+        "scope": "typescript",
+        "prefix": [
+            "it", "testcase"
+        ],
+        "body": [
+            "${2:it('${3:should do something}', async () => {",
+            "    $0",
+            "\\});}",
+            "",
+        ]
+    },
+    "try catch": {
+        "scope": "typescript",
+        "prefix": [
+            "try"
+        ],
+        "body": [
+            "try",
+            "{",
+            "    $0",
+            "}",
+            "catch(${1:error})",
+            "{",
+            "    ",
+            "}"
+        ]
+    },
+    "dir": {
+        "scope": "typescript",
+        "prefix": [ "dir", "rl" ],
+        "body": [ "console.dir($1, { depth: ${2:null} });" ]
+    },
+    "router": {
+        "scope": "typescript",
+        "prefix": ["r", "router", "routes"],
+        "body": [
+            "import { Router } from 'express';", 
+            "const router = Router();",
+            "export default router;",
+            ""
+        ]
+    }
+}
