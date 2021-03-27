@@ -4,6 +4,8 @@ import * as morgan from "morgan";
 import * as bodyParser from "body-parser";
 import { createConnection } from "typeorm";
 
+process.env.SECRET = "very-secret-key";
+
 export const app = express();
 
 app.use(bodyParser.json());

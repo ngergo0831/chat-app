@@ -13,6 +13,7 @@
   "license": "SEE LICENSE",
   "devDependencies": {
     "@types/express": "^4.17.6",
+    "@types/jsonwebtoken": "^8.5.1",
     "@types/mocha": "^7.0.2",
     "@types/morgan": "^1.9.0",
     "@types/node": "^14.0.10",
@@ -27,6 +28,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "sqlite3": "^5.0.2",
     "typeorm": "^0.2.31"
