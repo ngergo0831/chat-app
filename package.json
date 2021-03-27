@@ -1,7 +1,7 @@
 {
-  "name": "ts-api-starter",
+  "name": "chat-app",
   "version": "0.1.0",
-  "description": "TypeScript API Starter Package",
+  "description": "Chat App",
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
@@ -27,6 +27,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-validator": "^6.6.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.31"
   }
 }
