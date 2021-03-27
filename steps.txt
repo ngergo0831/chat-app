@@ -2,3 +2,4 @@ git clone - TypeScript Starter API
 npm ci
 npm i -S typeorm sqlite3
 create database entities
+setup db connection
