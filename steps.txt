@@ -8,3 +8,6 @@ test with curl (curl -XPOST -H'content-type: application/json' -d'{"name": "Tibi
 npm i -S jsonwebtoken
 npm i -D @types/jsonwebtoken
 create login method and add route
+create auth middleware
+create message controller and entities
+add message route to router.ts
