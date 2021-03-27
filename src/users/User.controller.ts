@@ -15,14 +15,19 @@ export async function register(req: Request, res: Response) {
     return res.status(400).json("Password is mandatory.");
   }
 
+  let exists = await User.find({ where: { email: req.body.email} });
+  if(exists.length > 0) {
+    return res.status(400).json("Email is already registered.");
+  }
+
   const user = User.create(req.body as Object);
 
   user.password = crypto
     .createHash("sha512")
     .update(user.password)
     .digest("hex");
-
-  await user.save();
+  
+    await user.save();
 
   res.json(user);
 }
