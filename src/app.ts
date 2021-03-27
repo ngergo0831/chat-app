@@ -11,14 +11,14 @@ export const app = express();
 app.use(bodyParser.json());
 
 createConnection({
-  type: "sqlite",
-  database: "db.sqlite",
-  entities: ["dist/**/*.entity.js"],
-  synchronize: true,
+    type: "sqlite",
+    database: "db.sqlite",
+    entities: ["dist/**/*.entity.js"],
+    synchronize: true,
 });
 
 if (process.env.NODE_ENV !== "PRODUCTION") {
-  app.use(morgan("dev"));
+    app.use(morgan("dev"));
 }
 
 app.use(router);

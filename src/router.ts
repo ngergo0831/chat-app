@@ -5,7 +5,7 @@ const router = express.Router();
 export default router;
 
 router.get("/", (req, res) => {
-  res.end();
+    res.end();
 });
 
 router.use(userRouter);
