@@ -1,6 +1,7 @@
 import {
   BaseEntity,
   Column,
+  CreateDateColumn,
   DeleteDateColumn,
   Entity,
   JoinColumn,
@@ -31,7 +32,7 @@ export class Message extends BaseEntity {
   @Column()
   recieverId: number;
 
-  @Column()
+  @CreateDateColumn()
   sentAt: Date;
 
   @Column()
