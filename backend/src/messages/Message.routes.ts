@@ -5,3 +5,5 @@ const router = express.Router();
 export default router;
 
 router.get("/messages", auth, controller.list);
+
+router.get("/messages/:messageId", auth, controller.show);

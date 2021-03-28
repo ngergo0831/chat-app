@@ -6,7 +6,7 @@ export async function auth(req: Request, res: Response, next: NextFunction) {
         return res.status(401).json("No authentication header");
     }
 
-    const token = req.headers.authorization.replace("Bearer", "");
+    const token = req.headers.authorization.replace("Bearer ", "");
     try {
         const payload = jwt.verify(token, process.env.SECRET as string) as any;
         (req as any).userId = payload.uid;
